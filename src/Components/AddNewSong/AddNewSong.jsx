@@ -12,8 +12,22 @@ const AddNewSong = (props) => {
     const [release_date, setReleaseDate] = useState('');
     const [genre, setGenre] = useState('');
 
+    function handleSubmit(event) {
+        event.preventDefault(); //stops page from reloading when submit button is clicked
+        // newSong variable holds onto new variable input by user with the usestate function have to set the variable key value pair to associate the new input with the value
+        let newSong = {
+            title: title,
+            artist: artist,
+            album: album,
+            release_date: release_date,
+            genre: genre
+        };
+        console.log(newSong) //used as a check/debugger to check if input is being captured
+        props.addNewSongProperty(newSong)
+    }
+
     return ( 
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Title: </label>
             <input type='text' value={title} onChange={(event) => setTitle(event.target.value)}/>
             <label>Artist: </label>
@@ -24,6 +38,7 @@ const AddNewSong = (props) => {
             <input type='date' value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/>
             <label>Genre: </label>
             <input type='text' value={genre} onChange={(event) => setGenre(event.target.value)}/>
+            <button typle='submit'>Add</button>
         </form>
      );
 }

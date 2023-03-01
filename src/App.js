@@ -11,6 +11,10 @@ function App() {
     getAllSongs();
   }, []);
 
+function addNewSong(song){
+  let tempSong= [...songs, song]
+  setSongs(tempSong);
+}
 
   async function getAllSongs(){
     const response = await axios.get('http://127.0.0.1:8000/api/songs/');
@@ -19,7 +23,7 @@ function App() {
 
   return (
     <><div>
-      <AddNewSong />
+      <AddNewSong addNewSongProperty={addNewSong}/>
     </div>
     <div>
       <MusicTable parentSongs={songs}/>
