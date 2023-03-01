@@ -11,9 +11,15 @@ function App() {
     getAllSongs();
   }, []);
 
-function addNewSong(song){
+async function addNewSong(song){
   let tempSong= [...songs, song]
   setSongs(tempSong);
+
+  const response = await axios.post ('http://127.0.0.1:8000/api/songs/', song);
+
+  if(response.status === 204){
+    console.log('Successfully created a new song!');
+  }
 }
 
   async function getAllSongs(){
