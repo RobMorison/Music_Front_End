@@ -17,10 +17,13 @@ function App() {
   }
 
   return (
-    <div>
+    <><div>
       <button onClick={() => getAllSongs()}>Get All Songs</button>
       {console.log(songs)}
     </div>
+    <div>
+      <MusicTable parentSongs={songs}/>
+    </div></>
   );
 }
 
