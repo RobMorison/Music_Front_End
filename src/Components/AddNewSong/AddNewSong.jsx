@@ -23,7 +23,7 @@ const AddNewSong = (props) => {
             genre: genre
         };
         console.log(newSong) //used as a check/debugger to check if input is being captured
-        props.addNewSongProperty(newSong)
+        props.addNewSong(newSong)
     }
 
     return ( 
@@ -38,7 +38,7 @@ const AddNewSong = (props) => {
             <input type='date' value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/>
             <label>Genre: </label>
             <input type='text' value={genre} onChange={(event) => setGenre(event.target.value)}/>
-            <button typle='submit'>Add</button>
+            <button type='submit'>Add</button>
         </form>
      );
 }

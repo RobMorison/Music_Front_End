@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MusicTable from './Components/MusicTable/MusicTable';
 import AddNewSong from './Components/AddNewSong/AddNewSong';
+import SearchFunction from './Components/SearchFunction/SearchFunction';
 
 function App() {
 
@@ -29,15 +30,15 @@ async function addNewSong(song){
 
   return (
     <><div>
-      <AddNewSong addNewSongProperty={addNewSong}/>
+      <AddNewSong addNewSong={addNewSong}/>
+    </div>
+    <div>
+      <SearchFunction songs={songs} setSongs={setSongs}/>
     </div>
     <div>
       <MusicTable parentSongs={songs}/>
     </div>
-    <div>
-      <button onClick={() => getAllSongs()}>Search</button>
-      {console.log(songs)}
-    </div></>    
+</>    
   );
 }
 
