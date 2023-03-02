@@ -3,6 +3,7 @@ import axios from 'axios';
 import MusicTable from './Components/MusicTable/MusicTable';
 import AddNewSong from './Components/AddNewSong/AddNewSong';
 import SearchFunction from './Components/SearchFunction/SearchFunction';
+import NavBar from './Components/NavBar/NavBar';
 
 function App() {
 
@@ -29,7 +30,10 @@ async function addNewSong(song){
   }
 
   return (
-    <><div>
+    <><div className = 'nav_bar'>
+      <NavBar/>
+      </div>
+      <div>
       <AddNewSong addNewSong={addNewSong}/>
     </div>
     <div>
