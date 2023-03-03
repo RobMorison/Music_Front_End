@@ -26,8 +26,8 @@ const SearchFunction = (props) => {
 
     return ( 
         <form onSubmit={handleSubmit}>
-            <label>Search: </label>
-            <input type='text' value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
+            <label></label>
+            <input type='text' value={searchTerm} placeholder= 'Search' onChange={(event) => setSearchTerm(event.target.value)}/>
             <button onClick={handleSubmit} >Search</button>
         </form>
      );

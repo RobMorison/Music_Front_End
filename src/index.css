@@ -1,12 +1,25 @@
+.app{
+    background-color: black;
+    color: white;
+}
+
 .nav_bar{
     background-color: black;
-    color: white
+    color: white;
+    padding: 2rem;
 }
 
 .body{
     display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .new_song{
     display: flex;
+    
+}
+
+.button:hover{
+    border: 1rem;
 }

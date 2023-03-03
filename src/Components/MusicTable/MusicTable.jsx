@@ -1,6 +1,21 @@
+import axios from "axios";
 const MusicTable = (props) => {
+
+
+    // async function deleteSong(id){
+    //     await axios.delete(`http://127.0.0.1:8000/api/songs/${id}/`)
+    //     console.log('delete song')
+    // }
+
+    const deleteSong = async (id) =>{
+        await axios.delete(`http://127.0.0.1:8000/api/songs/${id}/`)
+        console.log('delete song')
+        await props.getAllSongs()
+    }
+    
+
     return ( 
-        <table>
+        <table className='table table-striped table-dark'>
         <thead>
           <tr>
             <th>Title</th>
@@ -11,15 +26,15 @@ const MusicTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.parentSongs.map((songs, index) => {
+          {props.songs.map((song, index) => {
             return (
               <tr key={index}>
-                <td>{songs.title}</td>
-                <td>{songs.artist}</td>
-                <td>{songs.album}</td>
-                <td>{songs.release_date}</td>
-                <td>{songs.genre}</td>
-                <td><button type='submit'>Delete</button></td>
+                <td>{song.title}</td>
+                <td>{song.artist}</td>
+                <td>{song.album}</td>
+                <td>{song.release_date}</td>
+                <td>{song.genre}</td>
+                <td><button onClick={() => deleteSong(song.id)}>Delete</button></td>
               </tr>
               
             )

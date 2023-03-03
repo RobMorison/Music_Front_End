@@ -30,8 +30,9 @@ async function addNewSong(song){
   }
 
   return (
-    <><div className = 'nav_bar'>
-        <NavBar/>
+    <><div className = 'app'>
+        <div className = 'nav_bar'>
+          <NavBar/>
         </div>
         <div className = 'body'>
         <div className = 'new_song'>
@@ -39,8 +40,9 @@ async function addNewSong(song){
         </div>
         <div>
           <SearchFunction songs={songs} setSongs={setSongs}/>
-          <MusicTable parentSongs={songs}/>
+          <MusicTable songs={songs} getAllSongs={getAllSongs}/>
         </div>      
+        </div>
       </div></>    
   );
 }

@@ -28,17 +28,29 @@ const AddNewSong = (props) => {
 
     return ( 
         <form onSubmit={handleSubmit}>
+            <ul>
             <label>Title: </label>
             <input type='text' value={title} onChange={(event) => setTitle(event.target.value)}/>
+            </ul>
+            <ul>
             <label>Artist: </label>
             <input type='text' value={artist} onChange={(event) => setArtist(event.target.value)}/>
+            </ul>
+            <ul>
             <label>Album: </label>
             <input type='text' value={album} onChange={(event) => setAlbum(event.target.value)}/>
+            </ul>
+            <ul>
             <label>Release Date: </label>
             <input type='date' value={release_date} onChange={(event) => setReleaseDate(event.target.value)}/>
+            </ul>
+            <ul>
             <label>Genre: </label>
             <input type='text' value={genre} onChange={(event) => setGenre(event.target.value)}/>
-            <button type='submit'>Add</button>
+            </ul>
+            <ul className= 'button'>
+            <button type='submit'>Add Song</button>
+            </ul>
         </form>
      );
 }
