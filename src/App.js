@@ -31,18 +31,17 @@ async function addNewSong(song){
 
   return (
     <><div className = 'nav_bar'>
-      <NavBar/>
-      </div>
-      <div>
-      <AddNewSong addNewSong={addNewSong}/>
-    </div>
-    <div>
-      <SearchFunction songs={songs} setSongs={setSongs}/>
-    </div>
-    <div>
-      <MusicTable parentSongs={songs}/>
-    </div>
-</>    
+        <NavBar/>
+        </div>
+        <div className = 'body'>
+        <div className = 'new_song'>
+          <AddNewSong addNewSong={addNewSong}/>
+        </div>
+        <div>
+          <SearchFunction songs={songs} setSongs={setSongs}/>
+          <MusicTable parentSongs={songs}/>
+        </div>      
+      </div></>    
   );
 }
 
