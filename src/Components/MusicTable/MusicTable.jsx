@@ -1,18 +1,14 @@
 import axios from "axios";
+import Modal from "../PutSong/PutSong";
+
 const MusicTable = (props) => {
 
-
-    // async function deleteSong(id){
-    //     await axios.delete(`http://127.0.0.1:8000/api/songs/${id}/`)
-    //     console.log('delete song')
-    // }
 
     const deleteSong = async (id) =>{
         await axios.delete(`http://127.0.0.1:8000/api/songs/${id}/`)
         console.log('delete song')
         await props.getAllSongs()
     }
-    
 
     return ( 
         <table className='table table-striped table-dark'>
@@ -34,6 +30,7 @@ const MusicTable = (props) => {
                 <td>{song.album}</td>
                 <td>{song.release_date}</td>
                 <td>{song.genre}</td>
+                <td><button onClick={() =>Modal}>Edit</button></td>
                 <td><button onClick={() => deleteSong(song.id)}>Delete</button></td>
               </tr>
               

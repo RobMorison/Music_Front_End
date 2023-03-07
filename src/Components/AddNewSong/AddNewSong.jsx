@@ -28,6 +28,7 @@ const AddNewSong = (props) => {
 
     return ( 
         <form onSubmit={handleSubmit}>
+            <h5>Add New Song</h5>
             <ul>
             <label>Title: </label>
             <input type='text' value={title} onChange={(event) => setTitle(event.target.value)}/>

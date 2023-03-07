@@ -5,6 +5,7 @@ import AddNewSong from './Components/AddNewSong/AddNewSong';
 import SearchFunction from './Components/SearchFunction/SearchFunction';
 import NavBar from './Components/NavBar/NavBar';
 
+
 function App() {
 
   const[songs, setSongs] = useState([]);
@@ -41,7 +42,7 @@ async function addNewSong(song){
         <div>
           <SearchFunction songs={songs} setSongs={setSongs}/>
           <MusicTable songs={songs} getAllSongs={getAllSongs}/>
-        </div>      
+        </div>     
         </div>
       </div></>    
   );
