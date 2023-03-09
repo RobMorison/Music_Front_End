@@ -13,7 +13,12 @@ const SearchFunction = (props) => {
 
     async function searchSong(){
         const results = props.songs.filter((song) =>{
-            if (song.title === searchTerm || song.artist === searchTerm || song.album === searchTerm || song.release_date === searchTerm || song.genre === searchTerm){
+            if (
+                song.title.includes(searchTerm) || 
+                song.artist.includes(searchTerm) ||
+                song.album.includes(searchTerm) ||
+                song.release_date.includes(searchTerm) ||
+                song.genre.includes(searchTerm)){
                 return true
             }
 
